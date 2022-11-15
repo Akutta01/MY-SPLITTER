@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPLITTER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Open+Sans:wght@700&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/app.js" defer></script>
+    <script src="scripts/input-warning.js" defer></script>
+    <script src="scripts/algorithm.js" defer></script>
+  </head>
+  <body>
+    <header id="main-header">
+      <h1>SPLI<br />TTER</h1>
+    </header>
+
+    <form autocomplete="off" onsubmit="return false">
+      <div id="config-input">
+        <div id="config-amount">
+          <div class="style-input-label">
+            <h2>Bill</h2>
+            <span id="warning" class="on">Can't be zero</span>
+          </div>
+
+          <input
+            type="number"
+            placeholder="$"
+            id="config-amount-input"
+            value="0"
+            required
+          />
+        </div>
+        <div id="config-amount">
+          <h2>Select Tip %</h2>
+          <div id="style-button">
+            <button onclick="calc()" hidden="true"></button>
+            <div id="percent-tip">
+              <button onclick="submitFunc(15)" id="5%" class="btn" value="0.05">
+                5%
+              </button>
+              <button onclick="submitFunc(10)" id="10%" class="btn" value="0.1">
+                10%
+              </button>
+              <button
+                onclick="submitFunc(15)"
+                id="15%"
+                class="btn"
+                value="0.15"
+              >
+                15%
+              </button>
+            </div>
+            <div id="percent-tip">
+              <button
+                onclick="submitFunc(25)"
+                id="25%"
+                class="btn"
+                value="0.25"
+              >
+                25%
+              </button>
+              <button onclick="submitFunc(50)" id="50%" class="btn" value="0.5">
+                50%
+              </button>
+              <input
+                type="number"
+                onclick="submitFunc(value)"
+                placeholder="Custom"
+                id="custom-input"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="config-amount">
+          <div class="style-input-label">
+            <h2>Number of People</h2>
+            <span id="warning1" class="on">Can't be zero</span>
+          </div>
+
+          <input type="number" id="config-amount-input1" value="0" required />
+        </div>
+      </div>
+      <div id="display-output">
+        <div>
+          <div id="output-info">
+            <div id="output-info-style">
+              <h2>Tip Amount</h2>
+              <p>/ person</p>
+            </div>
+
+            <div id="amount">$0.00</div>
+          </div>
+          <div id="output-info">
+            <div id="output-info-style">
+              <h2>Total Amount</h2>
+              <p>/ person</p>
+            </div>
+
+            <div id="amount1">$0.00</div>
+          </div>
+        </div>
+        <div>
+          <button type="reset" id="btn-reset">RESET</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
